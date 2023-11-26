@@ -5,7 +5,7 @@
 #include <iostream>
 const double e = 0.6566970091;
 const long double Pi = 3.14159265358;
-const double eps = 0.0001;
+const double eps = 0.00001;
 double excentricToTrue(double E)
 {
 	return atan(sqrt((1 + e) / (1 - e)) * tan(E / 2)) * 2;
