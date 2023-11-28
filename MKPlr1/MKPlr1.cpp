@@ -10,6 +10,7 @@ double excentricToTrue(double E)
 {
 	return atan(sqrt((1 + e) / (1 - e)) * tan(E / 2)) * 2;
 }
+
 double iterationMethod(double Enext, double Enow, double M)
 {
 	
@@ -80,9 +81,10 @@ int main()
 		{
 			double E1 = e * sin(i * 2 * Pi / 360) + (i * 2 * Pi / 360);
 			double E0 = i * 2 * Pi / 360;
-			fout << halfDivisionMethod(E1, E0, i * 2 * Pi / 360) << std::endl;
+			fout << iterationMethod(E1, E0, i * 2 * Pi / 360) << std::endl;
 		}
 	}
+
 	fout.close();
 	fin.open("iterationMethod.txt");
 	fout.open("trueIterationMethod.txt");
@@ -147,6 +149,7 @@ int main()
 			fout << excentricToTrue(strtod(ch, &ptrEnd)) << std::endl;
 		}
 	}
+
 	fin.close();
 	fout.close();
 
